@@ -13,7 +13,7 @@
 
     <ul *ngIf="isAuth" fxLayout fxLayoutGap="10px" class="navigation-items">
       <li><a routerLink="/training">Training</a></li>
-      <li><a routerLink="#">Logout</a></li>
+      <li><a style="cursor: pointer" (click)="onLogout()">Logout</a></li>
     </ul>
   </div>
 </mat-toolbar>
