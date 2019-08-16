@@ -5,7 +5,6 @@ import { Subject } from 'rxjs/Subject';
 import { User } from './user.model';
 import { AuthData } from './auth-data.model';
 
-
 @Injectable()
 export class AuthService {
   authChange = new Subject<boolean>();
@@ -36,7 +35,7 @@ export class AuthService {
   }
 
   getUser() {
-    return { ...this.user};
+    return { ...this.user };
   }
 
   isAuth() {
