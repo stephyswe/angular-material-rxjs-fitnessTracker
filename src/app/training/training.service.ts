@@ -8,9 +8,10 @@ import { map } from 'rxjs/operators';
 export class TrainingService {
   exerciseChanged = new Subject<Exercise>();
   exercisesChanged = new Subject<Exercise[]>();
+  finishedExercisesChanged = new Subject<Exercise[]>();
+
   private availableExercises: Exercise[] = [];
   private runningExercise: Exercise;
-  private exercises: Exercise[] = [];
 
   constructor(private db: AngularFirestore) {}
 
@@ -25,14 +26,14 @@ export class TrainingService {
               id: doc.payload.doc.id,
               name: doc.payload.doc.data()['name'],
               duration: doc.payload.doc.data()['duration'],
-              calories: doc.payload.doc.data()['calories'],
+              calories: doc.payload.doc.data()['calories']
             };
           });
         })
       )
       .subscribe((exercises: Exercise[]) => {
         this.availableExercises = exercises;
-        this.exercisesChanged.next([...this.availableExercises])
+        this.exercisesChanged.next([...this.availableExercises]);
       });
   }
 
@@ -69,12 +70,16 @@ export class TrainingService {
     return { ...this.runningExercise };
   }
 
-  getCompletedOrCancelledExercises() {
-    return this.exercises.slice()
+  fetchCompletedOrCancelledExercises() {
+    this.db
+      .collection('finishedExercises')
+      .valueChanges()
+      .subscribe((exercises: Exercise[]) => {
+        this.finishedExercisesChanged.next(exercises);
+      });
   }
 
   private addDatatoDatabase(exercise: Exercise) {
     this.db.collection('finishedExercises').add(exercise);
-
   }
 }
