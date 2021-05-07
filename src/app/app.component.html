@@ -1,4 +1,6 @@
-<mat-sidenav-container>
+<header class="body-header"><img src="assets/welcome-new.png" width="300" /></header>
+
+<mat-sidenav-container class="card">
   <mat-sidenav #sidenav role="navigation">
     <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
   </mat-sidenav>
@@ -7,5 +9,6 @@
     <main>
       <router-outlet></router-outlet>
     </main>
+    <app-footer (sidenavToggle)="sidenav.toggle()"></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

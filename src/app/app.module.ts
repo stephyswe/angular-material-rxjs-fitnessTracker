@@ -19,9 +19,11 @@ import { environment } from '../environments/environment';
 import { UIService } from './shared/ui.service';
 import { AuthModule } from './auth/auth.module';
 import { reducers } from './app.reducer';
+import { FooterComponent } from './navigation/footer/footer.component';
 
 @NgModule({
   declarations: [
+    FooterComponent,
     AppComponent,
     WelcomeComponent,
     HeaderComponent,

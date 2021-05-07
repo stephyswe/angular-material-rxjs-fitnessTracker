@@ -1,4 +1,6 @@
-mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
   height: 100%;
 }
 
@@ -6,3 +8,27 @@ mat-sidenav {
   width: 250px;
 }
 
+.card {
+  background-color: whitesmoke;
+  border-radius: 32px;
+  overflow: hidden;
+  min-height: 420px;
+  min-width: 520px;
+  max-width: 520px;
+}
+
+main {
+  max-width: 520px;
+  min-height: 300px;
+  max-height: 300px;
+  overflow: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.body-header {
+  margin-bottom: 4rem;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}

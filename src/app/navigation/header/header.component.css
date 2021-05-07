@@ -1,11 +1,11 @@
 a {
   text-decoration: none;
-  color: white;
+  color: whitesmoke;
 }
 
 a:hover,
 a:active {
-  color: lightgray;
+  color: white;
 }
 
 .navigation-items {
@@ -17,4 +17,12 @@ a:active {
 .nav-caption {
   display: inline-block;
   padding-left: 6px;
+}
+
+.mat-toolbar {
+  background: plum;
+}
+
+.header-logo {
+  width: 50px;
 }
