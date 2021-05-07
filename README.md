@@ -1,5 +1,7 @@
 # FitnessTracker
 
+Based on: 
+https://www.udemy.com/course/angular-full-app-with-angular-material-angularfire-ngrx/learn/lecture/9120250
 ![Download from Google Play](logo.png)
 
 ### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4. 
